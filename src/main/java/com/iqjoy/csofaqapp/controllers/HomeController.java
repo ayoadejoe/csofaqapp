@@ -56,7 +56,7 @@ public class HomeController {
     }
 
     @PostMapping("/submitform")
-    public void submitForm(@RequestParam String email, @RequestParam String question) {
+    public void submitForm(@RequestParam("email") String email, @RequestParam("question") String question) {
         System.out.println(email +" received");
         NewFAQRequest contact = new NewFAQRequest();
         contact.setEmail(email);
