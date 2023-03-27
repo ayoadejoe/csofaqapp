@@ -6,17 +6,16 @@ import com.iqjoy.csofaqapp.models.HomeModel;
 import com.iqjoy.csofaqapp.repository.CSOFAQsRepository;
 import com.iqjoy.csofaqapp.repository.NewFAQRequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
+@Component
 @Controller
 public class HomeController {
 
@@ -56,11 +55,20 @@ public class HomeController {
     }
 
     @PostMapping("/submitform")
-    public void submitForm(@RequestParam("email") String email, @RequestParam("question") String question) {
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public String submitForm(@RequestParam("email") String email, @RequestParam("question") String question) {
         System.out.println(email +" received");
+        System.out.println(question +" received");
         NewFAQRequest contact = new NewFAQRequest();
         contact.setEmail(email);
         contact.setQuestion(question);
+        contact.setCreated_at(new Timestamp(System.currentTimeMillis()));
         newFAQRequestRepository.save(contact);
+        System.out.println("Saved!");
+
+        // Save data to database here
+        String message = "Thank you. We would respond to you soon";
+        return "{\"message\":\"" + message + "\"}";
     }
 }
