@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>CSO FAQ</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -13,14 +13,14 @@
 <body class="page-body">
 <header>
     <div class="header-left">
-        <h1>REGULATOR<br>FAQ DATABASE</h1>
+        <h1 id = "welcome">REGULATOR<br>FAQ DATABASE</h1>
     </div>
     <nav class="header-right">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="https://csocompliance.org.ng/">Home</a></li>
+            <li><a href="https://csocompliance.org.ng/crp-public-directory">Directory</a></li>
+            <li><a href="https://csocompliance.org.ng/faqs">FAQS</a></li>
+            <li><a href="https://csocompliance.org.ng/crp-complaince-compedium">Compliance Compedium</a></li>
         </ul>
     </nav>
 </header>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="input-container">
                     <label for="question"><i class="material-icons icon-blue icon-xlarge">help</i></label>
-                    <textarea id="question" name="question" rows="4" cols="50" placeholder="Enter your question" required></textarea>
+                    <textarea id="question" name="question" rows="4" cols="50" placeholder="Enter your question (200 words max)" required maxlength="300"></textarea>
                 </div>
                 <div class="button-container">
                     <button type="submit" id="submit-btn"><i class="material-icons icon-blue icon-large">send</i>Submit</button>
