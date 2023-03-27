@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Spring Boot Example</title>
+    <title>CSO FAQ</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/homestyle.css">
+    <link rel="stylesheet" href="../css/newqueststyle.css">
+
+    <!-- Import Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-<h1>Message from Spring Boot</h1>
-<p th:text="${homeModel.message}">Default Message</p>
+
+<body class="page-body">
+<header>
+    <div class="header-left">
+        <h1>REGULATOR<br>FAQ DATABASE</h1>
+    </div>
+    <nav class="header-right">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="banner">
+    <h1>Select a Regulator to see their FAQ</h1>
+    <div class="dropdown">
+        <select name="regulator" id="menu" onchange="showSelectedText()">
+            <option value="" selected disabled hidden>Which regulator do you want to know about?</option>
+            <option th:each="regulator : ${regulators}" th:value="${regulator}" th:text="${regulator}"></option>
+        </select>
+    </div>
+    <div class="selected-text">
+        <p id="selectedItem"></p>
+    </div>
+</div>
+<main >
+    <div id="app">
+        <h1><i class="material-icons icon-blue icon-large">message</i>Can't find the answer, send us a message</h1>
+        <div class="form-container">
+            <form id="myForm" action="" method="post">
+                <div class="input-container">
+                    <label for="email"><i class="material-icons icon-blue icon-xlarge">email</i></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-container">
+                    <label for="question"><i class="material-icons icon-blue icon-xlarge">help</i></label>
+                    <textarea id="question" name="question" rows="4" cols="50" placeholder="Enter your question" required></textarea>
+                </div>
+                <div class="button-container">
+                    <button type="submit" id="submit-btn"><i class="material-icons icon-blue icon-large">send</i>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Import custom JavaScript -->
+    <script src="../js/newquestscript.js"></script>
+</main>
+
+<script src="../js/homescript.js"></script>
 </body>
+
 </html>

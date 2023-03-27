@@ -1,0 +1,108 @@
+/* CSS code for styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-image: url("https://csocompliance.org.ng/contact-us-new1.jpg");
+    background-size: cover;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    color: white;
+
+}
+
+.header-left {
+    font-weight: bolder;
+    margin-left: 30px;
+    font-size: 2em;
+    transform-style: flat;
+    text-transform: capitalize;
+}
+
+.header-right {
+justify-items: start;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 1.5em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #333;
+}
+
+.banner {
+    background-color: #60a8f7;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.dropdown {
+    font-size: 1.2em;
+    font-weight: bold;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown select {
+    padding: 10px;
+    margin-left: 10px;
+    width: 100%;
+    align-items: center;
+    max-width: 300px;
+}
+
+.selected-text {
+    width: 60%;
+    margin: 20px auto;
+    background-color: #4db5f8;
+    text-align: center;
+    display: none;
+}
+
+.page-body{
+    background-color: #60a8f7;
+}

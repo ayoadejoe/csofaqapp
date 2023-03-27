@@ -1,15 +1,26 @@
 body{
     font-family: 'Work Sans', sans-serif;
+    background-color: #60a8f7;
 }
 .faq-heading{
     border-bottom: #777;
     padding: 20px 60px;
 }
+
+.form-container {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    display: inline-block;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 65%;
+}
+
+
 .faq-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
-
 }
 .hr-line{
     width: 60%;
@@ -18,7 +29,7 @@ body{
 }
 /* Style the buttons that are used to open and close the faq-page body */
 .faq-page {
-    /* background-color: #eee; */
+    /*background-color: black;*/
     color: #444;
     cursor: pointer;
     padding: 30px 20px;
@@ -27,8 +38,10 @@ body{
     outline: none;
     transition: 0.4s;
     margin: auto;
-
+    justify-items: left;
 }
+
+
 .faq-body{
     margin: auto;
     /* text-align: center; */
@@ -47,7 +60,7 @@ body{
 /* Style the faq-page panel. Note: hidden by default */
 .faq-body {
     padding: 0 18px;
-    background-color: white;
+    background-color: rgb(250, 250, 250);
     display: none;
     overflow: hidden;
 }

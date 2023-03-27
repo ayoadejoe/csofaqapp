@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Regulators</title>
 </head>
 <body>
-$END$
+<h1>Regulators</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Regulator</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="regulator : ${regulators}">
+    <td th:text="${regulator}"></td>
+  </tr>
+  </tbody>
+</table>
 </body>
 </html>

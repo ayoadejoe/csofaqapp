@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-$END$
+<div class="form-container">
+<ul>
+  <li th:each="faq : ${faqs}">
+    <h3 class="faq-page" th:text="${faq.question.trim()}"></h3>
+    <p class="faq-body" th:text="${faq.response.trim()}"></p>
+    <hr class="hr-line">
+  </li>
+</ul>
+</div>
+<script src="../js/main.js"></script>
 </body>
 </html>

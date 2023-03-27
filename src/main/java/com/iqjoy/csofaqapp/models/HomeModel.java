@@ -1,11 +1,10 @@
-package com.iqjoy.cso.models;
+package com.iqjoy.csofaqapp.models;
 
 public class HomeModel {
 
     private String message;
 
     public HomeModel(String message) {
-        System.out.println(message);
         this.message = message;
     }
 
