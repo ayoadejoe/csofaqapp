@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+</head>
+<body>
+<div class="form-container">
+<ul>
+  <li th:each="faq : ${faqs}">
+    <h3 class="faq-page" th:text="${faq.question.trim()}"></h3>
+    <p class="faq-body" th:text="${faq.response.trim()}"></p>
+    <hr class="hr-line">
+  </li>
+</ul>
+</div>
+<script src="../static/js/main.js" type="application/javascript"></script>
+</body>
+</html>
