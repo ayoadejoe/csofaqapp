@@ -51,14 +51,14 @@ public class FAQRequestEnd {
 
         NewFAQRequest newFAQRequest = newFAQRequestRepository.getReferenceById(id);
         newFAQRequest.setQuestion(question);
-
+        //save this object
         CSOFAQs csofaQs = new CSOFAQs();
         csofaQs.setResponse(response);
         csofaQs.setQuestion(question);
         csofaQs.setRegulator(regulator);
         csofaQs.setCreated_at(Timestamp.valueOf(LocalDateTime.now()));
         csofaQsRepository.save(csofaQs);
-
+        //return the new table
         return csofaQsRepository.findAll();
     }
 }
