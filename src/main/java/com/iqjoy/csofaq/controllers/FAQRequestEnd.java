@@ -58,7 +58,7 @@ public class FAQRequestEnd {
         csofaQs.setRegulator(regulator);
         csofaQs.setCreated_at(Timestamp.valueOf(LocalDateTime.now()));
         csofaQsRepository.save(csofaQs);
-        //return the new table
+
         return csofaQsRepository.findAll();
     }
 }
